@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
 
   def index
+    @cars = Car.all
   end
 
   def show
@@ -21,7 +22,7 @@ class CarsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
