@@ -1,0 +1,40 @@
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+}
+
+.card img {
+  height: 100px;
+}
+
+.card p {
+  color: #2A3D45;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+  color: #2A3D45;
+}
+
+a {
+  text-decoration: none;
+}
