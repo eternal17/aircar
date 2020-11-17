@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Car.destroy_all
+User.destroy_all
+
+50.times do
+  User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+  )
+end
+
+50.times do
+  Car.create!(
+    make: Faker::Vehicle.make,
+    model: Faker::Vehicle.model,
+    user: User.all.sample
+  )
+end
