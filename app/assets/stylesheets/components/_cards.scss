@@ -30,6 +30,20 @@
   color: #2A3D45;
 }
 
+.car-card {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  border: 1px solid rgb(230,230,230);
+  background: white;
+}
+
+.car-container {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
 h1, h2, h3, h4 {
   font-family: Poppins;
   color: #2A3D45;
@@ -37,4 +51,28 @@ h1, h2, h3, h4 {
 
 a {
   text-decoration: none;
+}
+
+
+.link-unstyled:hover {
+  text-decoration: none;
+}
+
+.main {
+  position: relative;
+}
+
+.user-info {
+  flex-direction: row;
+  border-top: 1px solid grey;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.user-info span {
+  margin-top: 35px;
+}
+
+.b-right {
+  border-right: 1px solid grey;
 }

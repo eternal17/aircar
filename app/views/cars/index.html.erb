@@ -1,31 +1,44 @@
 <h1>All our cars!</h1>
 
-<ul class = "list-unstyled" >
-  <div class = "car-card">
-   <% @cars.each do |car| %>
-   <li class = "card pa-0 mb-0 mt-4 w-100%">
-    <img class = "w-100% w-280-sm br2-top "
-    src="https://images.unsplash.com/photo-br1605581223740-dd18ebf8a75a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="car photo" >
-      <div class = "car-card-info">
-        <div class = "car-header">
-        <h2> <%=car.make%> <%=car.model%></h2>
-          <h3> <%=car.year%></h3>
-        </div>
-        <div>
-          <p>ICON</p>
-        </div>
-        <div class = "car-description">
-          <p><%=car.description%></p>
-        <div class = "car-price">
-          <h3> <%=car.price%></h3>
-        </div>
+
+<div class="car-container">
+  <ul class = "list-unstyled" >
+
+     <% @cars.each do |car| %>
+
+     <li class = "car-card pa-0 mb-0 mt-4 w-100">
+      <%= link_to car_path(car), class: "flex flex-column flex-row-sm link-unstyled" do %>
+      <div class="d-flex">
+        <img class="car-img rounded"
+        src="https://images.unsplash.com/photo-1603924498829-ce16c0da32aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80" alt="car photo" >
+        <div class = "w-100 minw-0 main">
+          <div class="pt-3 pr-3 pl-4 flex-grow">
+            <div class="mb-1">
+              <div class="d-flex flex-grow flex-align-center minw-0 pr-2">
+                <h3 class="mb-0 trunc-line"><%= car.make %> <%= car.model %></h3>
+                <span class="ml-2 mt-2"><%= car.year %></span>
+              </div>
+              <span class="d-block trunc-line mt-3"><%= car.description %></span>
+            </div>
+          </div>
+          <div class="d-flex user-info pt-3 pr-3 pl-4">
+            <div class="d-flex mb-1">
+              <span class="text-semi-bold lh-solid">Some user name for now</span>
+            </div>
+            <div class="d-flex ml-2 mb-4">
+              <span class="block f-1 f-2-sm"><%= car.price %></span>
+              <span class="block">SEK/Day</span>
+            </div>
+          </div>
         </div>
       </div>
-   </li>
-     <% end %>
- </div>
-</ul>
+        <% end %>
+     </li>
 
+       <% end %>
+  </ul>
+
+</div>
 
 <p><%= link_to "Add car", new_car_path %></p>
 
