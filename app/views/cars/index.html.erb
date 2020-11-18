@@ -1,5 +1,10 @@
 <h1>All our cars!</h1>
 
+<%= simple_form_for :search, url: cars_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input_field :make, input_html: {value: ""}, placeholder: 'What car are you looking for?', name: "query" %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
+
 
 <div class="car-container">
   <ul class = "list-unstyled" >

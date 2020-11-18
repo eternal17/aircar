@@ -7,20 +7,31 @@
 <div class="container mt-3">
   <h2 class="text-center">How it works</h2>
   <div class="cards">
-    <div class="card">
-      <img src="#">
-      <h4>Apply</h4>
-      <p>Create your profile</p>
-    </div>
-    <div class="card">
-      <img src="#">
-      <h4>Rent</h4>
-      <p>Choose a car to rent</p>
-    </div>
-    <div class="card">
-      <img src="#">
-      <h4>Rent out</h4>
-      <p>Give your car to someone</p>
-    </div>
+
+    <%= link_to new_user_registration_path, class: "link-unstyled h-100" do %>
+      <div class="card h-100">
+        <img src="#">
+        <h4>Apply</h4>
+        <p>Create your profile</p>
+      </div>
+    <% end %>
+
+    <%= link_to cars_path, class: "link-unstyled h-100" do %>
+      <div class="card">
+        <img src="#">
+        <h4>Rent</h4>
+        <p>Choose a car to rent</p>
+      </div>
+    <% end %>
+
+    <%= link_to new_car_path, class: "link-unstyled h-100" do %>
+      <div class="card">
+        <img src="#">
+        <h4>Rent out</h4>
+        <p>Give your car to someone</p>
+      </div>
+    <% end %>
+
   </div>
 </div>
+
