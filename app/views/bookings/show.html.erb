@@ -1,0 +1,11 @@
+<h3> Booking details </h3>
+<p> <strong>Make:</strong> <%= @booking.car.make %> </p>
+<p> <strong>Model:</strong> <%= @booking.car.model %> </p>
+<p> <strong>Year:</strong> <%= @booking.car.year %> </p>
+
+<p> <strong>Start date:</strong> <%= @booking.start_date %> </p>
+<p> <strong>End date:</strong> <%= @booking.end_date %> </p>
+<p> <strong>Price / hour:</strong> <%= @booking.car.price %> </p>
+
+<p> <strong>Rent time:</strong> <%= hours = (@booking.end_date - @booking.start_date) / 60 / 60 %> hours </p>
+<p><strong>Total:</strong> <%= hours * @booking.car.price %></p>
