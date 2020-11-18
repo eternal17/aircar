@@ -1,31 +1,45 @@
 <h1>All our cars!</h1>
 
-<ul class = "list-unstyled" >
-  <div class = "car-card">
-   <% @cars.each do |car| %>
-   <li class = "card pa-0 mb-0 mt-4 w-100%">
-    <img class = "w-100% w-280-sm br2-top "
-    src="https://images.unsplash.com/photo-br1605581223740-dd18ebf8a75a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="car photo" >
-      <div class = "car-card-info">
-        <div class = "car-header">
-        <h2> <%=car.make%> <%=car.model%></h2>
-          <h3> <%=car.year%></h3>
-        </div>
-        <div>
-          <p>ICON</p>
-        </div>
-        <div class = "car-description">
-          <p><%=car.description%></p>
-        <div class = "car-price">
-          <h3> <%=car.price%></h3>
-        </div>
+
+<div class="car-container">
+  <ul class = "list-unstyled" >
+
+     <% @cars.each do |car| %>
+
+     <li class = "car-card">
+      <%= link_to car_path(car), class: "link-unstyled" do %>
+      <div class="d-flex">
+        <img class="car-img rounded"
+        src="https://images.unsplash.com/photo-1603924498829-ce16c0da32aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80" alt="car photo" >
+        <div class = "car-card-info">
+          <div class="">
+
+            <div class="title-heart">
+              <h3 class="car-card-title"><%= car.make %> <%= car.model %> <span class="car-card-year"><%= car.year %></span></h3>
+              <i class="far fa-heart red-heart"></i>
+            </div>
+              <span class="car-card-description"><%= car.description %></span>
+              <div class="car-card-location"><i class="fas fa-map-pin"></i> City name</div>
+
+          </div>
+          <div class="car-card-owner">
+            <div class="">
+              <span class="">Some user name for now</span>
+            </div>
+            <div class="price-day">
+              <span class="price-bold"><%= car.price %></span>
+              <span class="">SEK/Day</span>
+            </div>
+          </div>
         </div>
       </div>
-   </li>
-     <% end %>
- </div>
-</ul>
+        <% end %>
+     </li>
 
+       <% end %>
+  </ul>
+
+</div>
 
 <p><%= link_to "Add car", new_car_path %></p>
 
