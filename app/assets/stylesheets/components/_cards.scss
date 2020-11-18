@@ -1,6 +1,7 @@
 .container {
   width: 900px;
   margin: auto;
+  padding-left: 10px;
 }
 
 .text-center {
@@ -35,13 +36,14 @@
   box-shadow: 0 0 5px rgb(230,230,230);
   border: 1px solid rgb(230,230,230);
   background: white;
+  margin-bottom: 16px;
 }
 
 .car-container {
   min-height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
 }
 
 h1, h2, h3, h4 {
@@ -58,21 +60,71 @@ a {
   text-decoration: none;
 }
 
-.main {
-  position: relative;
-}
 
-.user-info {
-  flex-direction: row;
-  border-top: 1px solid grey;
+.car-card-info {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 100px;
 }
 
-.user-info span {
-  margin-top: 35px;
+.car-card-year {
+  font-size: 12px;
+  opacity: 0.6;
+  font-family: $body-font;
 }
 
-.b-right {
-  border-right: 1px solid grey;
+.car-card-description {
+  font-size: 18px;
+  opacity: 0.7;
+  color: $gray;
+}
+
+.car-card-title {
+  margin: 0;
+  color: $gray;
+  opacity: 0.8;
+}
+
+.car-card-location {
+  background: #ccc;
+  color: $gray;
+  opacity: 0.6;
+  width: fit-content;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.car-card-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-card-owner span {
+  color: $gray;
+  opacity: 0.7;
+}
+
+.price-bold {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.title-heart {
+  display:flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.red-heart:hover {
+  color: red;
+}
+
+.price-day {
+  display: flex;
+  flex-direction: column;
 }

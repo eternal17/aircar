@@ -6,28 +6,29 @@
 
      <% @cars.each do |car| %>
 
-     <li class = "car-card pa-0 mb-0 mt-4 w-100">
-      <%= link_to car_path(car), class: "flex flex-column flex-row-sm link-unstyled" do %>
+     <li class = "car-card">
+      <%= link_to car_path(car), class: "link-unstyled" do %>
       <div class="d-flex">
         <img class="car-img rounded"
         src="https://images.unsplash.com/photo-1603924498829-ce16c0da32aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80" alt="car photo" >
-        <div class = "w-100 minw-0 main">
-          <div class="pt-3 pr-3 pl-4 flex-grow">
-            <div class="mb-1">
-              <div class="d-flex flex-grow flex-align-center minw-0 pr-2">
-                <h3 class="mb-0 trunc-line"><%= car.make %> <%= car.model %></h3>
-                <span class="ml-2 mt-2"><%= car.year %></span>
-              </div>
-              <span class="d-block trunc-line mt-3"><%= car.description %></span>
+        <div class = "car-card-info">
+          <div class="">
+
+            <div class="title-heart">
+              <h3 class="car-card-title"><%= car.make %> <%= car.model %> <span class="car-card-year"><%= car.year %></span></h3>
+              <i class="far fa-heart red-heart"></i>
             </div>
+              <span class="car-card-description"><%= car.description %></span>
+              <div class="car-card-location"><i class="fas fa-map-pin"></i> City name</div>
+
           </div>
-          <div class="d-flex user-info pt-3 pr-3 pl-4">
-            <div class="d-flex mb-1">
-              <span class="text-semi-bold lh-solid">Some user name for now</span>
+          <div class="car-card-owner">
+            <div class="">
+              <span class="">Some user name for now</span>
             </div>
-            <div class="d-flex ml-2 mb-4">
-              <span class="block f-1 f-2-sm"><%= car.price %></span>
-              <span class="block">SEK/Day</span>
+            <div class="price-day">
+              <span class="price-bold"><%= car.price %></span>
+              <span class="">SEK/Day</span>
             </div>
           </div>
         </div>
