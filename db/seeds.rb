@@ -20,6 +20,10 @@ end
   Car.create!(
     make: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
-    user: User.all.sample
+    user: User.all.sample,
+    price: rand(25..50),
+    year: rand(1995..2020),
+    description: Faker::Quote.famous_last_words,
+    address: Faker::Address.state
   )
 end

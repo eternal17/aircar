@@ -2,6 +2,13 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+      }
+    end
   end
 
   def show
