@@ -21,16 +21,92 @@
 </div>
 
 <div class="show-container">
-  <ul class = "list-unstyled">
-    <li>
-      <div class="d-flex">
-        <div class="title-heart">
-          <h2 class="car-card-title"><%= @car[:make] %> <%= @car[:model] %> <span class=""><%= @car[:year] %></span></h2>
-          <i class="far fa-heart red-heart"></i>
+  <div class="d-flex justify-content-between">
+
+    <div class="full-info">
+
+      <div class="car-brand">
+        <h2 class="car-card-title"><%= @car[:make] %> <%= @car[:model] %> <span class=""><%= @car[:year] %></span></h2>
+      </div>
+      <span class="car-owner">Owned by <%= @car.user[:first_name] %></span>
+
+      <div class="car-description">
+        <span class="car-desc"><%= @car[:description] %></span>
+      </div>
+
+      <div class="owner-info mt-5 pb-5">
+        <img src="https://images.unsplash.com/photo-1599231666334-ca0dbd7ad2da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="" class="owner-avatar rounded-circle">
+        <div class="name-address">
+          <span class="car-owner"><strong>Car owned by <%= @car.user[:first_name] %> <%= @car.user[:last_name] %></strong></span>
+          <span class="car-owner"><%= @car[:address] %></span>
         </div>
       </div>
-    </li>
-  </ul>
 
-  <%= link_to "Make a reservation",  new_car_booking_path(@car), class: "btn btn-primary"  %>
+      <div class="car-info pb-5">
+        <h4>Information about the car</h4>
+
+        <div class="grid-container pt-3">
+
+          <div class="d-flex mt-2 about-info">
+            <i class="fas fa-car-side icon"></i>
+            <div class="minw-0">
+              <h6 class="text-nowrap m-0">Brand</h6>
+              <span><%= @car[:make] %></span>
+            </div>
+          </div>
+
+          <div class="d-flex mt-2 about-info">
+            <i class="fas fa-car icon"></i>
+            <div class="minw-0">
+              <h6 class="text-nowrap m-0">Model</h6>
+              <span><%= @car[:model] %></span>
+            </div>
+          </div>
+
+          <div class="d-flex mt-2 about-info">
+            <i class="fas fa-cogs icon"></i>
+            <div class="minw-0">
+              <h6 class="text-nowrap m-0">Transmission</h6>
+              <span><%= @car[:transmission] %></span>
+            </div>
+          </div>
+
+          <div class="d-flex mt-2 about-info">
+            <i class="fas fa-chair icon"></i>
+            <div class="minw-0">
+              <h6 class="text-nowrap m-0">Seats</h6>
+              <span><%= @car[:seats] %></span>
+            </div>
+          </div>
+
+          <div class="d-flex mt-2 about-info">
+            <i class="fas fa-calendar-alt icon"></i>
+            <div class="minw-0">
+              <h6 class="text-nowrap m-0">Year</h6>
+              <span><%= @car[:year] %></span>
+            </div>
+          </div>
+
+          <div class="d-flex mt-2 about-info">
+            <i class="fas fa-dollar-sign icon"></i>
+            <div class="minw-0">
+              <h6 class="text-nowrap m-0">Price/Day</h6>
+              <span><%= @car[:price]  %> SEK</span>
+            </div>
+          </div>
+
+        </div>
+        <%= link_to "Edit your car",  edit_car_path(@car), class: "btn btn-success rounded mt-3"  %>
+      </div>
+
+    </div>
+
+    <div class="booking-form">
+      <%= render 'bookings/form', {car: @car, booking: Booking.new} %>
+      <%= link_to "Go back to all cars",  cars_path, class: "btn btn-success rounded mt-3 w-100"  %>
+    </div>
+
+  </div>
+
 </div>
+
