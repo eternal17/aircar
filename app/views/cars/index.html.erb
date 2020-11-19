@@ -1,9 +1,13 @@
 <h1>All our cars!</h1>
 
-<%= simple_form_for :search, url: cars_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input_field :make, input_html: {value: ""}, placeholder: 'What car are you looking for?', name: "query" %>
-  <%= f.submit "Search", class: "btn btn-primary" %>
+<%= form_tag cars_path, method: :get do %>
+<%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a car" %>
+<%= submit_tag "Find car!", class: "btn btn-primary" %>
 <% end %>
+<%#= simple_form_for :search, url: cars_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%#= f.input_field :make, input_html: {value: ""}, placeholder: 'What car are you looking for?', name: "query" %>
+  <%#= f.submit "Search", class: "btn btn-primary" %>
+<%# end %>
 
 
 <div class="car-container">
