@@ -1,13 +1,11 @@
 class CarsController < ApplicationController
-
   def index
     @cars = Car.all
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @cars.geocoded.map do |car|
-      {
-        lat: car.latitude,
-        lng: car.longitude
-      }
+    markers
+    if params[:query].present?
+      @cars = Car.all.search_by_make_and_model(params[:query])
+      markers
     end
   end
 
@@ -48,7 +46,16 @@ class CarsController < ApplicationController
 
   private
 
+    def markers
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+      }
+    end
+  end
+
   def car_params
-    params.require(:car).permit(:make, :model, :year, :seats, :transmission, :description, :price)
+    params.require(:car).permit(:make, :model, :year, :seats, :transmission, :description, :price, :photo, :address)
   end
 end
