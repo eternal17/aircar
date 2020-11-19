@@ -14,8 +14,12 @@
      <li class = "car-card">
       <%= link_to car_path(car), class: "link-unstyled" do %>
       <div class="d-flex">
-        <img class="car-img rounded"
+      <% if car.photo.attached? %>
+      <%= cl_image_tag car.photo.key, class: "car-img rounded"  %>
+        <% else %>
+         <img class="car-img rounded"
         src="https://images.unsplash.com/photo-1603924498829-ce16c0da32aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80" alt="car photo" >
+      <% end %>
         <div class = "car-card-info">
           <div class="">
 
@@ -24,7 +28,7 @@
               <i class="far fa-heart red-heart"></i>
             </div>
               <span class="car-card-description"><%= car.description %></span>
-              <div class="car-card-location"><i class="fas fa-map-pin"></i> City name</div>
+              <div class="car-card-location"><i class="fas fa-map-pin"></i> <%= car.address %></div>
 
           </div>
           <div class="car-card-owner">
