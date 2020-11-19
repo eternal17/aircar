@@ -7,6 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 // Your CSS partials
 @import "components/index";
@@ -16,4 +17,6 @@
 @import "components/cards";
 @import "components/imgcar";
 @import "components/carousel";
-@import "cars/show"
+@import "components/map";
+@import "cars/show";
+@import "components/form"
