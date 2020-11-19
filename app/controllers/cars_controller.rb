@@ -46,11 +46,12 @@ class CarsController < ApplicationController
 
   private
 
-    def markers
+  def markers
     @markers = @cars.geocoded.map do |car|
       {
         lat: car.latitude,
-        lng: car.longitude
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
       }
     end
   end
