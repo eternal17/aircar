@@ -40,14 +40,14 @@
       <div class="car-brand">
         <h2 class="car-card-title"><%= @car[:make] %> <%= @car[:model] %> <span class=""><%= @car[:year] %></span></h2>
       </div>
-      <span class="car-owner">Owned by <%= @car.user[:first_name] %></span>
+      <span class="car-owner">Owned by <%= @car.user[:first_name] %> <%= @car.user[:last_name] %></span>
 
       <div class="car-description">
         <span class="car-desc"><%= @car[:description] %></span>
       </div>
 
       <div class="owner-info mt-5 pb-5">
-        <img src="https://images.unsplash.com/photo-1599231666334-ca0dbd7ad2da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="" class="owner-avatar rounded-circle">
+        <%= cl_image_tag @car.user.photo.key, class: "owner-avatar rounded-circle" %>
         <div class="name-address">
           <span class="car-owner"><strong>Car owned by <%= @car.user[:first_name] %> <%= @car.user[:last_name] %></strong></span>
           <span class="car-owner"><%= @car[:address] %></span>
