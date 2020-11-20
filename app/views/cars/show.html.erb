@@ -47,7 +47,11 @@
       </div>
 
       <div class="owner-info mt-5 pb-5">
+        <% if @car.user.photo.attached? %>
         <%= cl_image_tag @car.user.photo.key, class: "owner-avatar rounded-circle" %>
+        <% else %>
+        <img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="" class="owner-avatar rounded-circle">
+        <% end %>
         <div class="name-address">
           <span class="car-owner"><strong>Car owned by <%= @car.user[:first_name] %> <%= @car.user[:last_name] %></strong></span>
           <span class="car-owner"><%= @car[:address] %></span>
