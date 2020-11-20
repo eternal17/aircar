@@ -1,4 +1,11 @@
-<h1>All our cars!</h1>
+<h1>AirCar has the cars you need!</h1>
+
+
+
+<%= simple_form_for :search, url: cars_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input_field :make, input_html: {value: ""}, placeholder: 'What car are you looking for?' %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
 
 
 <div class="car-container">
