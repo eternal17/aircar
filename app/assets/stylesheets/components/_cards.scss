@@ -9,9 +9,13 @@
 }
 
 .cards {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
   margin-bottom: 23px;
+  a {
+    display: block;
+  }
 }
 
 .card {

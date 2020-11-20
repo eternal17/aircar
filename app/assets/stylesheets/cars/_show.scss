@@ -1,0 +1,124 @@
+.show-container {
+  width: 900px;
+  margin: auto;
+  padding-left: 10px;
+  padding-top: 24px;
+}
+
+.show-container h2 {
+  font-size: 48px;
+}
+
+.show-container span {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.car-brand {
+  display:flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.car-brand h2 {
+  font-size: 36px;
+}
+
+.car-owner {
+  font-size: 16px !important;
+  opacity: 0.6 !important;
+  color: $gray;
+  padding-top: 4px;
+}
+
+.full-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.car-description {
+  padding-top: 36px;
+}
+
+.car-desc {
+  font-size: 18px;
+  opacity: 0.7;
+  color: $gray;
+}
+
+.owner-info {
+  display: flex;
+  align-items: center;
+}
+
+.owner-avatar {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  object-position: center;
+  object-fit: cover;
+}
+
+.name-address {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 24px;
+  grid-column-gap: 12px;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: center;
+}
+
+.about-info h6{
+  font-weight: lighter;
+  font-size: 17px !important;
+  opacity: 0.6;
+  color: $gray;
+}
+
+.about-info span{
+  font-weight: bold;
+  font-size: 18px !important;
+  opacity: 0.8;
+  color: $gray;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+
+.booking-form {
+  height: fit-content;
+  border-top: 4px solid #44D100;
+  padding: 10px 20px;
+  margin-left: 15px;
+  position: sticky;
+  top: 0;
+  border-radius: 5px;
+}
+
+
+
+

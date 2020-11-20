@@ -1,10 +1,17 @@
 class CarsController < ApplicationController
-
   def index
     @cars = Car.all
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    markers
+    if params[:query].present?
+      @cars = Car.all.search_by_make_and_model(params[:query])
+      markers
+    end
   end
 
   def show
+    @car = Car.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -39,7 +46,17 @@ class CarsController < ApplicationController
 
   private
 
+  def markers
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+      }
+    end
+  end
+
   def car_params
-    params.require(:car).permit(:make, :model, :year, :seats, :transmission, :description, :price)
+    params.require(:car).permit(:make, :model, :year, :seats, :transmission, :description, :price, :photo, :address)
   end
 end

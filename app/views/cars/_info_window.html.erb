@@ -1,0 +1,7 @@
+<div class="infopop">
+  <h5><%= car.make %> <%= car.model %></h5>
+  <h6><%= (car.price).to_i %>kr/day</h6>
+  <h6><%= car.address %></h6>
+  <%= link_to "Book car", car_path(car), class: "btn btn-primary" %>
+</div>
+<!-- <p></p> -->

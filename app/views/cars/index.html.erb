@@ -1,23 +1,32 @@
-<h1>AirCar has the cars you need!</h1>
+
+  <%#= simple_form_for :search, url: cars_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%#= f.input_field :make, input_html: {value: ""}, placeholder: 'What car are you looking for?', name: "query" %>
+  <%#= f.submit "Search", class: "btn btn-primary" %>
+<%# end %>
 
 
-
-<%= simple_form_for :search, url: cars_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input_field :make, input_html: {value: ""}, placeholder: 'What car are you looking for?' %>
-  <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
-
-
-<div class="car-container">
-  <ul class = "list-unstyled" >
+<div class="car-container pt-3">
+  <ul class = "list-unstyled pr-3 pl-3" >
+      <%= form_tag cars_path, method: :get do %>
+      <div class="input-group mb-4">
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a car" %>
+      <div class="input-group-append">
+      <%= submit_tag "Find car!", class: "btn btn-primary rounded-lg" %>
+      </div>
+      </div>
+      <% end %>
 
      <% @cars.each do |car| %>
 
      <li class = "car-card">
       <%= link_to car_path(car), class: "link-unstyled" do %>
       <div class="d-flex">
-        <img class="car-img rounded"
+      <% if car.photo.attached? %>
+      <%= cl_image_tag car.photo.key, class: "car-img rounded"  %>
+        <% else %>
+         <img class="car-img rounded"
         src="https://images.unsplash.com/photo-1603924498829-ce16c0da32aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80" alt="car photo" >
+      <% end %>
         <div class = "car-card-info">
           <div class="">
 
@@ -26,7 +35,7 @@
               <i class="far fa-heart red-heart"></i>
             </div>
               <span class="car-card-description"><%= car.description %></span>
-              <div class="car-card-location"><i class="fas fa-map-pin"></i> City name</div>
+              <div class="car-card-location"><i class="fas fa-map-pin"></i> <%= car.address %></div>
 
           </div>
           <div class="car-card-owner">
@@ -45,8 +54,11 @@
 
        <% end %>
   </ul>
-
+  <div class="map-container pr-3">
+    <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
-
-<p><%= link_to "Add car", new_car_path %></p>
-
