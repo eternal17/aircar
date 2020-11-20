@@ -1,37 +1,30 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1495013034289-3664878e32f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1566&q=80);">
-  <div class="container">
-    <h1>AirCar</h1>
+<div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "roadcar.jpg"%>);">
+  <div class="container wrapheader">
+    <h1>Enjoy the freedom of having the right car only when you need one</h1>
   </div>
 </div>
 
-<div class="container mt-3">
-  <h2 class="text-center">How it works</h2>
-  <div class="cards">
-
-    <%= link_to new_user_registration_path, class: "link-unstyled h-100" do %>
-      <div class="card h-100">
-        <img src="#">
-        <h4>Apply</h4>
-        <p>Create your profile</p>
-      </div>
-    <% end %>
-
-    <%= link_to cars_path, class: "link-unstyled h-100" do %>
-      <div class="card">
-        <img src="#">
-        <h4>Rent</h4>
-        <p>Choose a car to rent</p>
-      </div>
-    <% end %>
-
-    <%= link_to new_car_path, class: "link-unstyled h-100" do %>
-      <div class="card">
-        <img src="#">
-        <h4>Rent out</h4>
-        <p>Give your car to someone</p>
-      </div>
-    <% end %>
-
+<div class="mt-3">
+  <h2 class="text-center">How can AirCar work for you?</h2>
+  <div class="cards home_card" >
+    <div class="card">
+      <h4>Find the car you need</h4>
+      <%= image_tag "happy_renter.jpg", class: "w-100 class pt-2 pb-2"%>
+      <p>Rent the car of your dreams</p>
+    </div>
+    <div class="card">
+      <h4>Rent your car out</h4>
+      <%= image_tag "rent_out.jpg", class: "w-100 class pt-2 pb-2"%>
+      <p>Make money - be climate smart</p>
+    </div>
+    <div class="card">
+      <h4>Become an AirCar member</h4>
+      <%= image_tag "become_member.jpg", class: "w-100 class pt-2 pb-2"%>
+      <p>Create your profile today</p>
+    </div>
   </div>
 </div>
 
+</div>

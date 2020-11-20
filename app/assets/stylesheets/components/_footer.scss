@@ -1,5 +1,5 @@
 .footer {
-  background: white;
+  background: #E6E8EA;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,3 +21,15 @@
 .footer-links a:hover {
   opacity: 1;
 }
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+// .footer-container {
+//     position: fixed;
+//     bottom: 0px;
+//     right: 0px;
+//     left: 0px;
+// }

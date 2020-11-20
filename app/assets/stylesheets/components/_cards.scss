@@ -12,14 +12,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 23px;
   a {
     display: block;
   }
 }
 
 .card {
-  width: 200px;
+  width: 350px;
+  height: 180px;
+
   border-radius: 4px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
@@ -28,7 +30,6 @@
 }
 
 .card img {
-  height: 100px;
 }
 
 .card p {
@@ -51,7 +52,7 @@
 }
 
 h1, h2, h3, h4 {
-  font-family: Poppins;
+  font-family: Nunito;
   color: #2A3D45;
 }
 

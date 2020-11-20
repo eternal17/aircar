@@ -1,1 +1,11 @@
-// Specific CSS for your home-page
+.home_card img {
+  height: 86%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.home_card .card {
+  height: 350px !important;
+  padding: 20px 0px;
+}
