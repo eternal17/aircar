@@ -8,10 +8,18 @@
       <% end %>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1578887237591-d2d01aa10a7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=704&q=80" class="d-block w-100" alt="...">
+      <% if @car.photo.attached? %>
+        <%= cl_image_tag @car.photo.key, class: "d-block w-100"  %>
+      <% else %>
+         <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80" class="d-block w-100" alt="car photo" >
+      <% end %>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1605375182274-121235a9317e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="d-block w-100" alt="...">
+      <% if @car.photo.attached? %>
+        <%= cl_image_tag @car.photo.key, class: "d-block w-100"  %>
+      <% else %>
+         <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80" class="d-block w-100" alt="car photo" >
+      <% end %>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
