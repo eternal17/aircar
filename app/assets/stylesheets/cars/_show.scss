@@ -72,7 +72,7 @@
 .car-info {
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 360px;
 }
 
 .grid-container {
@@ -83,8 +83,11 @@
 }
 
 .about-info {
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 10px;
   align-items: center;
+  justify-items: center;
 }
 
 .about-info h6{

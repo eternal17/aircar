@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h1>My car</h1>
+  <h1>Car Details</h1>
   <%= simple_form_for @car do |f| %>
     <%= f.input :make %>
     <%= f.input :model %>
@@ -10,6 +10,9 @@
     <%= f.input :price %>
     <%= f.input :address %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "Add car", class: "btn btn-primary rounded w-100" %>
+    <div class="d-flex">
+      <%= f.submit "Update", class: "btn btn-primary rounded w-100 mr-4" %>
+      <%= link_to "Go back", car_path(@car), class: "btn btn-success rounded w-100"  %>
+    </div>
     <% end %>
 </div>
