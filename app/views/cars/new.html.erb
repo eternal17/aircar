@@ -1,1 +1,18 @@
-<%= render "form", car: @car %>
+<div class="form-container">
+  <h1>Car Details</h1>
+  <%= simple_form_for @car do |f| %>
+    <%= f.input :make %>
+    <%= f.input :model %>
+    <%= f.input :year %>
+    <%= f.input :transmission %>
+    <%= f.input :seats %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.input :photo, as: :file %>
+    <div class="d-flex">
+      <%= f.submit "Add car", class: "btn btn-primary rounded w-100 mr-4" %>
+      <%= link_to "Go back", root_path, class: "btn btn-success rounded w-100"  %>
+    </div>
+    <% end %>
+</div>

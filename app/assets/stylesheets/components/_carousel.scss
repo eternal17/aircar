@@ -3,6 +3,13 @@
   overflow: hidden;
 }
 
+.carousel-item {
+  height: 60vh;
+  img {
+    transform: translateY(-50%);
+  }
+}
+
 /*   .carousel-item {
     height: 80vh;
     display: flex;
